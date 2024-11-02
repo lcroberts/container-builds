@@ -7,3 +7,5 @@ LABEL com.github.containers.toolbox="true" \
 COPY build.sh /tmp/build.sh
 
 RUN /tmp/build.sh
+
+RUN rm -rf /tmp/*
