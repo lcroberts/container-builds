@@ -4,7 +4,7 @@ LABEL com.github.containers.toolbox="true" \
       usage="This image is meant to be used with the toolbox or distrobox command" \
       summary="An image intended to be used as a base for linux development"
 
-COPY ./build.sh /tmp/build.sh
+COPY ./fedora-dev/build.sh /tmp/build.sh
 
 RUN /tmp/build.sh
 
