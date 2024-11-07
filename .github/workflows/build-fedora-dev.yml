@@ -8,8 +8,9 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - '**/README.md'
+    paths:
+      - 'fedora-dev/**'
+      - '!fedora-dev/README.md'
 env:
     IMAGE_NAME: fedora-dev
     IMAGE_TAGS: latest
