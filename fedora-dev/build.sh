@@ -100,11 +100,15 @@ dnf install -y \
 
 # Sets up host-exec for various applications
 mkdir -p /usr/local/bin/
-ln_host_exec() {
-    ln -sf /usr/bin/distrobox-host-exec "/usr/local/bin/$1"
-}
+echo 'ln -sf /usr/bin/distrobox-host-exec "/usr/local/bin/$1"' >/usr/local/bin/ln_host_exec
+chmod +x /usr/local/bin/ln_host_exec
+# ln_host_exec() {
+#     ln -sf /usr/bin/distrobox-host-exec "/usr/local/bin/$1"
+# }
 ln_host_exec docker
 ln_host_exec podman
 ln_host_exec flatpak
+ln_host_exec code
+ln_host_exec rpm-ostree
 
 dnf clean all
