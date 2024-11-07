@@ -102,9 +102,7 @@ dnf install -y \
 mkdir -p /usr/local/bin/
 echo 'ln -sf /usr/bin/distrobox-host-exec "/usr/local/bin/$1"' >/usr/local/bin/ln_host_exec
 chmod +x /usr/local/bin/ln_host_exec
-# ln_host_exec() {
-#     ln -sf /usr/bin/distrobox-host-exec "/usr/local/bin/$1"
-# }
+
 ln_host_exec docker
 ln_host_exec podman
 ln_host_exec flatpak
