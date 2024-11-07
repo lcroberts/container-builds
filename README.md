@@ -3,10 +3,12 @@
 This repository houses various container builds, the details of each can be found below.
 
 Image List:
-- [Fedora Dev](#fedora-dev) [![build-fedora-dev](https://github.com/lcroberts/container-builds/actions/workflows/build-fedora-dev.yml/badge.svg)](https://github.com/lcroberts/container-builds/actions/workflows/build-fedora-dev.yml)
-- [WMBazzite](#wmbazzite) [![build-wmbazzite](https://github.com/lcroberts/container-builds/actions/workflows/build-wmbazzite.yml/badge.svg)](https://github.com/lcroberts/container-builds/actions/workflows/build-wmbazzite.yml)
+- [Fedora Dev](#fedora-dev)
+- [WMBazzite](#wmbazzite)
 
 ## Fedora Dev
+
+[![build-fedora-dev](https://github.com/lcroberts/container-builds/actions/workflows/build-fedora-dev.yml/badge.svg)](https://github.com/lcroberts/container-builds/actions/workflows/build-fedora-dev.yml)
 
 Includes a bunch of cli tools that I use out of the box, as well as improved
 integration with the host system.You can use podman or docker to build this
@@ -24,6 +26,8 @@ also access the image from the github container registry at
 `ghcr.io/lcroberts/fedora-dev`.
 
 ## WMBazzite
+
+[![build-wmbazzite](https://github.com/lcroberts/container-builds/actions/workflows/build-wmbazzite.yml/badge.svg)](https://github.com/lcroberts/container-builds/actions/workflows/build-wmbazzite.yml)
 
 This image is intended to be a personal derivative of [Bazzite](https://bazzite.gg/#). It has added some window manager stuff on top of the existing Bazzite image to make it fit my workflow out of the box. It also includes some other features that I need such as Japanese input and some theming utilities. It can be built with one of the following commands:
 
