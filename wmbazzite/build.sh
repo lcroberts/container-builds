@@ -83,7 +83,6 @@ rpm-ostree --idempotent install \
 
 # Example for enabling a System Unit File
 systemctl enable podman.socket
-systemctl disable tailscaled.service
 systemctl disable btrfs-dedup@var-home.timer
 
 curl -Lo /usr/bin/kmonad https://github.com/kmonad/kmonad/releases/latest/download/kmonad
