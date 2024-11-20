@@ -108,5 +108,6 @@ ln_host_exec podman
 ln_host_exec flatpak
 ln_host_exec code
 ln_host_exec rpm-ostree
+ln_host_exec tailscale
 
 dnf clean all
