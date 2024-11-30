@@ -27,7 +27,6 @@ rpm-ostree --idempotent install \
     kvantum-qt5 \
     qt6ct \
     qt5ct \
-    onedrive \
     zathura \
     kitty \
     imv \
