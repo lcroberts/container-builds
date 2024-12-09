@@ -66,6 +66,7 @@ rpm-ostree --idempotent install \
     hyprlock \
     hypridle \
     hyprpolkitagent \
+    hyprsunset \
     rofi-wayland \
     swww \
     aylurs-gtk-shell \
