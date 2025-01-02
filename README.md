@@ -25,6 +25,19 @@ The image can then be accessed with the url `localhost/fedora-dev`. You can
 also access the image from the github container registry at
 `ghcr.io/lcroberts/fedora-dev`.
 
+## WMBluefin (WIP)
+
+[![build-wmbluefin](https://github.com/lcroberts/container-builds/actions/workflows/build-wmbluefin.yml/badge.svg)](https://github.com/lcroberts/container-builds/actions/workflows/build-wmbluefin.yml)
+
+This image is intended to be a personal derivative of [bluefin](https://projectbluefin.io/). It has added some window manager stuff on top of the existing Bazzite image to make it fit my workflow out of the box. It also includes some other features that I need such as Japanese input and some theming utilities. It can be built with one of the following commands:
+
+```bash
+podman build -t wmbluefin -f wmbluefin/Containerfile .
+```
+```bash
+docker build -t wmbluefin -f wmbluefin/Containerfile .
+```
+
 ## WMBazzite
 
 [![build-wmbazzite](https://github.com/lcroberts/container-builds/actions/workflows/build-wmbazzite.yml/badge.svg)](https://github.com/lcroberts/container-builds/actions/workflows/build-wmbazzite.yml)
