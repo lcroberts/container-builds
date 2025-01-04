@@ -64,7 +64,7 @@ rpm-ostree --idempotent install \
 
 # Cosmic
 curl -Lo /etc/yum.repos.d/_copr_ryanabx-cosmic.repo https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-"${RELEASE}"/ryanabx-cosmic-epoch-fedora-"${RELEASE}".repo
-# rpm-ostree --idempotent install cosmic-desktop
+rpm-ostree --idempotent install cosmic-desktop
 
 # Example for enabling a System Unit File
 systemctl enable podman.socket
@@ -74,5 +74,5 @@ curl -Lo /usr/bin/kmonad https://github.com/kmonad/kmonad/releases/latest/downlo
 chmod +x /usr/bin/kmonad
 # curl -Lo /usr/share/ublue-os/just/60-custom.just https://raw.githubusercontent.com/lcroberts/container-builds/main/wmbazzite/custom.just
 
-# update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/kitty 50
-# update-alternatives --set x-terminal-emulator /usr/bin/kitty
+update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/kitty 50
+update-alternatives --set x-terminal-emulator /usr/bin/kitty
