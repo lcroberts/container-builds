@@ -10,8 +10,8 @@ on:
     branches:
       - main
     paths:
-      - 'wmbazzite/**'
-      - '!wmbazzite/README.md'
+      - 'wmbazzite-gnome/**'
+      - '!wmbazzite-gnome/README.md'
   workflow_dispatch:
 
 env:
@@ -96,7 +96,7 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           containerfiles: |
-            ./wmbazzite/Containerfile-gnome
+            ./wmbazzite-gnome/Containerfile
           # Postfix image name with -custom to make it a little more descriptive
           # Syntax: https://docs.github.com/en/actions/learn-github-actions/expressions#format
           image: ${{ env.MY_IMAGE_NAME }}
