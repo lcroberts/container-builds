@@ -53,24 +53,24 @@ rpm-ostree --idempotent install \
     containerd.io
 
 # Hyprland Stuff
-rpm-ostree --idempotent install \
-    hyprland \
-    hyprland-contrib \
-    hyprpicker \
-    hyprlock \
-    hypridle \
-    hyprpolkitagent \
-    hyprsunset \
-    rofi-wayland \
-    swww \
-    aylurs-gtk-shell \
-    network-manager-applet \
-    wl-clipboard \
-    brightnessctl \
-    playerctl \
-    kanshi \
-    pavucontrol \
-    blueman
+# rpm-ostree --idempotent install \
+#     hyprland \
+#     hyprland-contrib \
+#     hyprpicker \
+#     hyprlock \
+#     hypridle \
+#     hyprpolkitagent \
+#     hyprsunset \
+#     rofi-wayland \
+#     swww \
+#     aylurs-gtk-shell \
+#     network-manager-applet \
+#     wl-clipboard \
+#     brightnessctl \
+#     playerctl \
+#     kanshi \
+#     pavucontrol \
+#     blueman
 
 # Cosmic
 curl -Lo /etc/yum.repos.d/_copr_ryanabx-cosmic.repo https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-"${RELEASE}"/ryanabx-cosmic-epoch-fedora-"${RELEASE}".repo
