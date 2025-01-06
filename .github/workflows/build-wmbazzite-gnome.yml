@@ -1,5 +1,5 @@
 ---
-name: build-wmbazzite
+name: build-wmbazzite-gnome
 on:
   pull_request:
     branches:
