@@ -11,6 +11,7 @@ on:
       - main
     paths:
       - 'wmbazzite/**'
+      - 'scripts/**'
       - '!wmbazzite/README.md'
   workflow_dispatch:
 

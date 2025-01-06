@@ -49,6 +49,8 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 COPY ./wmbazzite/build.sh /tmp/build.sh
+COPY ./scripts /tmp/scripts
+COPY ./custom.just /usr/share/ublue-os/just/60-custom.just
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
