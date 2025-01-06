@@ -92,7 +92,6 @@ jobs:
               echo "${TAG}"
           done
 
-          echo "timestamp_tag=${TAG}-${TIMESTAMP}" >> $GITHUB_OUTPUT
           echo "alias_tags=${alias_tags[*]}" >> $GITHUB_OUTPUT
 
       # Build metadata
@@ -131,7 +130,7 @@ jobs:
           if [ "${{ github.event.inputs.fresh-rechunk }}" == "true" ]; then
             IMAGEREF=""
           else
-            IMAGEREF="${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}:latest"
+            IMAGEREF="${{ env.PUSH_IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}:latest"
           fi
 
           echo "ref=${IMAGEREF}" >> $GITHUB_OUTPUT
@@ -147,7 +146,7 @@ jobs:
           rechunk: 'ghcr.io/hhd-dev/rechunk:v1.0.1'
           ref: 'raw-img'
           prev-ref: '${{ steps.generate-prev-ref.outputs.ref }}'
-          version: '${{ steps.generate-tags.outputs.timestamp_tag }}'
+          version: '${{ steps.generate-version.outputs.tag }}'
           labels: |
             io.artifacthub.package.readme-url=https://raw.githubusercontent.com/${{ github.repository }}/main/README.md
             org.opencontainers.image.source=https://github.com/lcroberts/container-builds
