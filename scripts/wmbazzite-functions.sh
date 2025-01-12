@@ -18,6 +18,7 @@ install-hyprland() {
         rofi-wayland \
         swww \
         waybar \
+        SwayNotificationCenter \
         network-manager-applet \
         wl-clipboard \
         brightnessctl \
