@@ -13,10 +13,10 @@ install-hyprland() {
         hyprpicker \
         hyprlock \
         hypridle \
+        hyprpaper \
         hyprpolkitagent \
         hyprsunset \
         rofi-wayland \
-        swww \
         waybar \
         SwayNotificationCenter \
         network-manager-applet \
