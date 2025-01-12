@@ -17,7 +17,7 @@ install-hyprland() {
         hyprsunset \
         rofi-wayland \
         swww \
-        aylurs-gtk-shell \
+        waybar \
         network-manager-applet \
         wl-clipboard \
         brightnessctl \
