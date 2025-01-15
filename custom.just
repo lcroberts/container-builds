@@ -1,5 +1,27 @@
 # vim: set ft=make :
 
+catppuccin-gtk:
+	#!/usr/bin/env bash
+	set -eoux pipefail
+
+	if [ ! -d ~/Projects/ ]; then
+		mkdir ~/Projects/
+	fi
+	if [ ! -d ~/Projects/CatppuccinGTKTheme/ ]; then
+		git clone --depth 1 https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git ~/Projects/CatppuccinGTKTheme
+	fi
+	if [ ! -f ~/Projects/CatppuccinGTKTheme/themes/install.sh ]; then
+		echo "Incorrect theme directory at ~/Projects/CatppuccinGTKTheme/"
+		exit 1
+	fi
+
+	~/Projects/CatppuccinGTKTheme/themes/install.sh -l -t orange
+	sudo flatpak override --filesystem="$HOME/.themes"
+	sudo flatpak override --filesystem="$HOME/.icons"
+	flatpak override --user --filesystem=xdg-config/gtk-4.0
+	sudo flatpak override --filesystem=xdg-config/gtk-4.0
+
+
 kmonad-setup:
 	#!/usr/bin/env bash
 	sudo groupadd uniput
