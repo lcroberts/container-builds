@@ -48,6 +48,7 @@ rpm-ostree --idempotent install \
     piper
 
 install-hyprland
+install-docker
 # install-cosmic
 install-kmonad
 install-vscode
