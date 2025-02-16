@@ -53,3 +53,9 @@ install-jetbrains-toolbox:
 	tar zxf jetbrains-toolbox-"${BUILD_VERSION}".tar.gz
 	echo "Launching JetBrains Toolbox"
 	./jetbrains-toolbox-"${BUILD_VERSION}"/jetbrains-toolbox
+
+topgrade-config:
+	#!/usr/bin/env bash
+	set -eoux pipefail
+	echo '[misc]' | sudo tee -a /etc/ublue-os/topgrade.toml
+	echo 'disable = ["vim"]' | sudo tee -a /etc/ublue-os/topgrade.toml
