@@ -49,7 +49,7 @@ rpm-ostree --idempotent install \
 
 install-hyprland
 install-docker
-# install-cosmic
+install-cosmic
 install-kmonad
 install-vscode
 
