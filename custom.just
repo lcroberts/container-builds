@@ -71,4 +71,3 @@ remove-vesktop-rpc-fix:
 	#!/usr/bin/env bash
 	set -eoux pipefail
 	rm ~/.config/user-tmpfiles.d/discord-rpc.conf
-	systemctl --user disable --now systemd-tmpfiles-setup.service
