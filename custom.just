@@ -66,3 +66,9 @@ fix-vesktop-rpc:
 	mkdir -p ~/.config/user-tmpfiles.d
 	echo 'L %t/discord-ipc-0 - - - - .flatpak/dev.vencord.Vesktop/xdg-run/discord-ipc-0' > ~/.config/user-tmpfiles.d/discord-rpc.conf
 	systemctl --user enable --now systemd-tmpfiles-setup.service
+
+remove-vesktop-rpc-fix:
+	#!/usr/bin/env bash
+	set -eoux pipefail
+	rm ~/.config/user-tmpfiles.d/discord-rpc.conf
+	systemctl --user disable --now systemd-tmpfiles-setup.service
