@@ -12,6 +12,7 @@ export RELEASE
 # this installs a package from fedora repos
 rpm-ostree --idempotent install \
     firewall-config \
+    virt-manager \
     adobe-source-han-sans-jp-fonts \
     adobe-source-han-serif-jp-fonts \
     mozilla-fira-mono-fonts \
