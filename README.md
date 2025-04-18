@@ -50,6 +50,9 @@ After you go through the installation process you can the run the following comm
 ```bash
 rpm-ostree reset
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/lcroberts/wmbazzite:latest
+systemctl reboot
+# After reboot rebase to signed image
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/lcroberts/wmbazzite:latest
 ```
 
 It is recommended to avoid going through the post install getting started app before rebasing, so you can close that out and rerun it after the rebase.
