@@ -27,6 +27,7 @@ rpm-ostree --idempotent install \
     zathura \
     kitty \
     imv \
+    mpv \
     zathura-plugins-all \
     fcitx5 \
     fcitx5-configtool \
