@@ -50,6 +50,7 @@ rpm-ostree --idempotent install \
     stow \
     piper
 
+install-fonts
 install-hyprland
 install-docker
 # install-cosmic

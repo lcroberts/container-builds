@@ -48,3 +48,11 @@ install-docker() {
         docker-compose-plugin \
         containerd.io
 }
+
+install-fonts() {
+    rpm-ostree --idempotent install \
+        jetbrainsmono-nerd-fonts \
+        firacode-nerd-fonts \
+        iosevka-nerd-fonts \
+        wine-fonts
+}
