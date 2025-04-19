@@ -54,5 +54,6 @@ install-fonts() {
         jetbrainsmono-nerd-fonts \
         firacode-nerd-fonts \
         iosevka-nerd-fonts \
+        ubuntu-nerd-fonts \
         ms-core-fonts
 }
