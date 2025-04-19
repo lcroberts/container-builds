@@ -54,5 +54,5 @@ install-fonts() {
         jetbrainsmono-nerd-fonts \
         firacode-nerd-fonts \
         iosevka-nerd-fonts \
-        wine-fonts
+        ms-core-fonts
 }
