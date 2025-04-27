@@ -50,12 +50,17 @@ rpm-ostree --idempotent install \
     stow \
     piper
 
+# Misc Stuff
 install-fonts
-install-hyprland
-install-docker
-# install-cosmic
 install-kmonad
-install-vscode
+
+# Desktops
+install-hyprland
+# install-cosmic
+
+# Developer Stuff
+# install-docker
+# install-vscode
 
 # Example for enabling a System Unit File
 systemctl enable podman.socket
