@@ -91,6 +91,7 @@ dnf install -y \
     fd-find \
     ripgrep \
     zoxide \
+    fzf \
     bat \
     jq \
     yq \
