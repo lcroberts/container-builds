@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+install-eza() {
+    curl -Lo /etc/yum.repos.d/_copr_lcroberts-eza.repo https://copr.fedorainfracloud.org/coprs/lcroberts/eza/repo/fedora-"${RELEASE}"/lcroberts-eza-fedora-"${RELEASE}".repo
+    rpm-ostree --idempotent install eza
+}
+
 install-cosmic() {
     curl -Lo /etc/yum.repos.d/_copr_ryanabx-cosmic.repo https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-"${RELEASE}"/ryanabx-cosmic-epoch-fedora-"${RELEASE}".repo
     rpm-ostree --idempotent install cosmic-desktop
@@ -50,10 +55,13 @@ install-docker() {
 }
 
 install-fonts() {
-    rpm-ostree --idempotent install \
-        jetbrainsmono-nerd-fonts \
-        firacode-nerd-fonts \
-        iosevka-nerd-fonts \
-        ubuntu-nerd-fonts \
-        ms-core-fonts
+    rpm-ostree --idempotent install liberation-fonts
+
+    for font in "Ubuntu" "JetBrainsMono" "FiraCode" "Iosevka" "NerdFontsSymbolsOnly"; do
+        mkdir -p /tmp/fonts/
+        curl -Lo /tmp/fonts/"${font}.zip" http://github.com/ryanoasis/nerd-fonts/releases/latest/download/"${font}".zip
+        mkdir -p /usr/share/fonts/"${font}"
+        unzip /tmp/fonts/"${font}.zip" -d /usr/share/fonts/"${font}"
+    done
+    rm -r /tmp/fonts
 }

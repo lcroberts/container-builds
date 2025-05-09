@@ -37,7 +37,6 @@ rpm-ostree --idempotent install \
     fcitx5-mozc \
     fish \
     neovim \
-    eza \
     fd-find \
     ripgrep \
     zoxide \
@@ -51,6 +50,7 @@ rpm-ostree --idempotent install \
     piper
 
 # Misc Stuff
+install-eza
 install-fonts
 install-kmonad
 
