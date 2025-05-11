@@ -54,7 +54,6 @@ rpm-ostree --idempotent install \
     piper
 
 # Misc Stuff
-install-eza
 install-fonts
 install-kmonad
 
