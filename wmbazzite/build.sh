@@ -7,6 +7,8 @@ export RELEASE
 
 . /tmp/scripts/wmbazzite-functions.sh
 
+curl -Lo /etc/yum.repos.d/_copr_lcroberts-wmbazzite.repo https://copr.fedorainfracloud.org/coprs/lcroberts/WMBazzite/repo/fedora-"${RELEASE}"/lcroberts-WMBazzite-fedora-"${RELEASE}".repo
+
 ### Install packages
 
 # this installs a package from fedora repos
@@ -26,6 +28,7 @@ rpm-ostree --idempotent install \
     qt5ct \
     zathura \
     kitty \
+    ghostty \
     imv \
     mpv \
     mpv-mpris \
@@ -36,6 +39,7 @@ rpm-ostree --idempotent install \
     fcitx5-qt5 \
     fcitx5-mozc \
     fish \
+    eza \
     neovim \
     fd-find \
     ripgrep \

@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-install-eza() {
-    curl -Lo /etc/yum.repos.d/_copr_lcroberts-eza.repo https://copr.fedorainfracloud.org/coprs/lcroberts/eza/repo/fedora-"${RELEASE}"/lcroberts-eza-fedora-"${RELEASE}".repo
-    rpm-ostree --idempotent install eza
-}
-
 install-cosmic() {
     curl -Lo /etc/yum.repos.d/_copr_ryanabx-cosmic.repo https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-"${RELEASE}"/ryanabx-cosmic-epoch-fedora-"${RELEASE}".repo
     rpm-ostree --idempotent install cosmic-desktop
