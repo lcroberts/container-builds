@@ -39,6 +39,7 @@ rpm-ostree --idempotent install \
     fcitx5-qt5 \
     fcitx5-mozc \
     fish \
+    starship \
     eza \
     neovim \
     fd-find \
