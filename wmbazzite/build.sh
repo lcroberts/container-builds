@@ -11,16 +11,10 @@ curl -Lo /etc/yum.repos.d/_copr_lcroberts-wmbazzite.repo https://copr.fedorainfr
 
 ### Install packages
 
-# this installs a package from fedora repos
+# GUI/Input/Theming Stuff
 rpm-ostree --idempotent install \
     firewall-config \
     virt-manager \
-    adobe-source-han-sans-jp-fonts \
-    adobe-source-han-serif-jp-fonts \
-    mozilla-fira-mono-fonts \
-    powerline-fonts \
-    jetbrains-mono-fonts-all \
-    google-droid-sans-mono-fonts \
     gtk-murrine-engine \
     kvantum \
     kvantum-qt5 \
@@ -38,8 +32,13 @@ rpm-ostree --idempotent install \
     fcitx5-gtk \
     fcitx5-qt5 \
     fcitx5-mozc \
+    piper
+
+# CLI Stuff
+rpm-ostree --idempotent install \
     fish \
     starship \
+    direnv \
     eza \
     neovim \
     fd-find \
@@ -50,9 +49,7 @@ rpm-ostree --idempotent install \
     iotop \
     tokei \
     tealdeer \
-    yq \
-    stow \
-    piper
+    yq
 
 # Misc Stuff
 install-fonts

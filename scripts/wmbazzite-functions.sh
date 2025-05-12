@@ -50,7 +50,14 @@ install-docker() {
 }
 
 install-fonts() {
-    rpm-ostree --idempotent install liberation-fonts
+    rpm-ostree --idempotent install \
+        liberation-fonts \
+        adobe-source-han-sans-jp-fonts \
+        adobe-source-han-serif-jp-fonts \
+        mozilla-fira-mono-fonts \
+        powerline-fonts \
+        jetbrains-mono-fonts-all \
+        google-droid-sans-mono-fonts
 
     for font in "Ubuntu" "JetBrainsMono" "FiraCode" "Iosevka" "NerdFontsSymbolsOnly"; do
         mkdir -p /tmp/fonts/
