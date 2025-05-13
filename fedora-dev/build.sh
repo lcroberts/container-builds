@@ -3,7 +3,7 @@
 dnf -y upgrade
 
 # Install packages required by Distrobox, this speeds up the first-run time
-RUN dnf install -y \
+dnf install -y \
     dnf5 \
     bash-completion \
     bc \
@@ -67,6 +67,7 @@ rm -drf /tmp/distrobox
 
 dnf install -y 'dnf-command(copr)'
 dnf copr enable -y kylegospo/distrobox-utils
+dnf copr enable -y lcroberts/WMBazzite
 dnf install -y xdg-utils-distrobox
 
 # RPM fusion
@@ -90,9 +91,9 @@ dnf install -y \
     eza \
     fd-find \
     ripgrep \
+    starship \
     zoxide \
     fzf \
-    bat \
     jq \
     yq \
     direnv \
