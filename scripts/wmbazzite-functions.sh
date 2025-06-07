@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 install-vesktop() {
-    mkdir -p /opt/Vesktop
+    [ -d /opt ] || mkdir /opt
+    mkdir /opt/Vesktop
     curl -Lo /tmp/vesktop.rpm https://vencord.dev/download/vesktop/amd64/rpm
     dnf5 install -y /tmp/vesktop.rpm
     rm /tmp/vesktop.rpm
