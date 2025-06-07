@@ -2,7 +2,7 @@
 
 install-vesktop() {
     curl -Lo /tmp/vesktop.rpm https://vencord.dev/download/vesktop/amd64/rpm
-    dnf5 install -y /tmp/vesktop.rpm
+    rpm-ostree install /tmp/vesktop.rpm
     rm /tmp/vesktop.rpm
 }
 
