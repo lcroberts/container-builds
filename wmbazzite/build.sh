@@ -12,7 +12,7 @@ dnf5 copr enable -y lcroberts/WMBazzite
 ### Install packages
 
 # TODO: Debug this bs
-# install-vesktop
+install-vesktop
 
 # GUI/Input/Theming Stuff
 dnf5 install -y \
