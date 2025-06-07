@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+install-vesktop() {
+    curl -Lo /tmp/vesktop.rpm https://vencord.dev/download/vesktop/amd64/rpm
+    rpm-ostree install /tmp/vesktop.rpm
+}
+
 install-cosmic() {
     curl -Lo /etc/yum.repos.d/_copr_ryanabx-cosmic.repo https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-"${RELEASE}"/ryanabx-cosmic-epoch-fedora-"${RELEASE}".repo
     rpm-ostree --idempotent install cosmic-desktop

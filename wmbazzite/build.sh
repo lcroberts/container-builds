@@ -54,6 +54,7 @@ rpm-ostree --idempotent install \
 # Misc Stuff
 install-fonts
 install-kmonad
+install-vesktop
 
 # Desktops
 install-hyprland
