@@ -2,17 +2,17 @@
 
 install-vesktop() {
     curl -Lo /tmp/vesktop.rpm https://vencord.dev/download/vesktop/amd64/rpm
-    rpm-ostree install /tmp/vesktop.rpm
+    dnf5 install -y /tmp/vesktop.rpm
 }
 
 install-cosmic() {
     curl -Lo /etc/yum.repos.d/_copr_ryanabx-cosmic.repo https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-"${RELEASE}"/ryanabx-cosmic-epoch-fedora-"${RELEASE}".repo
-    rpm-ostree --idempotent install cosmic-desktop
+    dnf5 install -y cosmic-desktop
 }
 
 install-hyprland() {
     curl -Lo /etc/yum.repos.d/_copr_solopasha-hypr.repo https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-"${RELEASE}"/solopasha-hyprland-fedora-"${RELEASE}".repo
-    rpm-ostree --idempotent install \
+    dnf5 install -y \
         hyprland \
         hyprland-contrib \
         hyprpicker \
@@ -41,12 +41,12 @@ install-kmonad() {
 install-vscode() {
     rpm --import https://packages.microsoft.com/keys/microsoft.asc
     echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" >/etc/yum.repos.d/vscode.repo
-    rpm-ostree --idempotent install code
+    dnf5 --idempotent install -y code
 }
 
 install-docker() {
     curl -Lo /etc/yum.repos.d/docker-ce.repo https://download.docker.com/linux/fedora/docker-ce.repo
-    rpm-ostree --idempotent install \
+    dnf5 install -y \
         docker-ce \
         docker-ce-cli \
         docker-buildx-plugin \
@@ -55,7 +55,7 @@ install-docker() {
 }
 
 install-fonts() {
-    rpm-ostree --idempotent install \
+    dnf5 install -y \
         liberation-fonts \
         adobe-source-han-sans-jp-fonts \
         adobe-source-han-serif-jp-fonts \

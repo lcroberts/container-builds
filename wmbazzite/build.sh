@@ -10,9 +10,10 @@ export RELEASE
 curl -Lo /etc/yum.repos.d/_copr_lcroberts-wmbazzite.repo https://copr.fedorainfracloud.org/coprs/lcroberts/WMBazzite/repo/fedora-"${RELEASE}"/lcroberts-WMBazzite-fedora-"${RELEASE}".repo
 
 ### Install packages
+# install-vesktop
 
 # GUI/Input/Theming Stuff
-rpm-ostree --idempotent install \
+dnf5 install -y \
     firewall-config \
     virt-manager \
     gtk-murrine-engine \
@@ -35,7 +36,7 @@ rpm-ostree --idempotent install \
     piper
 
 # CLI Stuff
-rpm-ostree --idempotent install \
+dnf5 install -y \
     fish \
     starship \
     direnv \
@@ -54,7 +55,6 @@ rpm-ostree --idempotent install \
 # Misc Stuff
 install-fonts
 install-kmonad
-install-vesktop
 
 # Desktops
 install-hyprland
