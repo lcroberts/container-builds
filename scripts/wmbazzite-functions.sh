@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-install-vesktop() {
-    ls /opt/
-    file /opt/Vesktop
-    curl -Lo /tmp/vesktop.rpm https://vencord.dev/download/vesktop/amd64/rpm
-    rpm-ostree install /tmp/vesktop.rpm
-    rm /tmp/vesktop.rpm
-}
-
 install-cosmic() {
     dnf5 copr enable -y ryanabx/cosmic-epoch
     dnf5 install -y cosmic-desktop
