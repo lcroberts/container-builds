@@ -6,12 +6,12 @@ install-vesktop() {
 }
 
 install-cosmic() {
-    curl -Lo /etc/yum.repos.d/_copr_ryanabx-cosmic.repo https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-"${RELEASE}"/ryanabx-cosmic-epoch-fedora-"${RELEASE}".repo
+    dnf5 copr enable -y ryanabx/cosmic-epoch
     dnf5 install -y cosmic-desktop
 }
 
 install-hyprland() {
-    curl -Lo /etc/yum.repos.d/_copr_solopasha-hypr.repo https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-"${RELEASE}"/solopasha-hyprland-fedora-"${RELEASE}".repo
+    dnf5 copr enable -y solopasha/hyprland
     dnf5 install -y \
         hyprland \
         hyprland-contrib \

@@ -7,7 +7,7 @@ export RELEASE
 
 . /tmp/scripts/wmbazzite-functions.sh
 
-curl -Lo /etc/yum.repos.d/_copr_lcroberts-wmbazzite.repo https://copr.fedorainfracloud.org/coprs/lcroberts/WMBazzite/repo/fedora-"${RELEASE}"/lcroberts-WMBazzite-fedora-"${RELEASE}".repo
+dnf5 copr enable -y lcroberts/WMBazzite
 
 ### Install packages
 # install-vesktop
