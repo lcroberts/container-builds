@@ -2,7 +2,7 @@
 
 install-vesktop() {
     curl -Lo /tmp/vesktop.rpm https://vencord.dev/download/vesktop/amd64/rpm
-    dnf5 install -y /tmp/vesktop.rpm
+    sudo dnf5 install -y /tmp/vesktop.rpm
 }
 
 install-cosmic() {
