@@ -17,7 +17,8 @@ runs:
   steps:
     - id: copy_files
       run: |
-        cp * ..
+        pwd
+        cp -r * ..
     - id: build_image
       uses: redhat-actions/buildah-build@v2
       with:
