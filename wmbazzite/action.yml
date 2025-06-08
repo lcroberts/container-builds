@@ -19,7 +19,10 @@ runs:
       id: copy_files
       shell: bash
       run: |
+        pwd
+        ls -la
         cp -r wmbazzite/* ..
+        ls -la
     - id: build_image
       uses: redhat-actions/buildah-build@v2
       with:
