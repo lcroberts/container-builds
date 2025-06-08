@@ -7,7 +7,7 @@ export RELEASE
 
 # Fix the os-release so that isos can be built
 # https://github.com/ublue-os/image-template/issues/99
-sed -i /etc/os-release 's/ID=bazzite/ID=fedora/g'
+sed -i 's/ID=bazzite/ID=fedora/g' /etc/os-release 
 
 . /ctx/functions.sh
 
