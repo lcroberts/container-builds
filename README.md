@@ -29,26 +29,19 @@ also access the image from the github container registry at
 
 [![build-wmbazzite](https://github.com/lcroberts/container-builds/actions/workflows/build-wmbazzite.yml/badge.svg)](https://github.com/lcroberts/container-builds/actions/workflows/build-wmbazzite.yml)
 
-This image is intended to be a personal derivative of [Bazzite](https://bazzite.gg/#). It has added some window manager stuff on top of the existing Bazzite image to make it fit my workflow out of the box. It also includes some other features that I need such as Japanese input and some theming utilities. It can be built with one of the following commands:
-
-```bash
-podman build -t wmbazzite -f wmbazzite/Containerfile .
-```
-```bash
-docker build -t wmbazzite -f wmbazzite/Containerfile .
-```
+This image is intended to be a personal derivative of [Bazzite](https://bazzite.gg/#). It has added some window manager stuff on top of the existing Bazzite image to make it fit my workflow out of the box. It also includes some other features that I need such as Japanese input and some theming utilities. Both the image and installer iso can be build with the justfile included in the wmbazzite directory.
 
 
 ### How to Use
 
 #### Installing
 
-This repository does not generate installer ISOs so the first step is to download an ISO from the [Bazzite](https://bazzite.gg/#) home page.
+You can install a [Bazzite](https://bazzite.gg/#) image and rebase or use the iso file from the releases.
 
-After you go through the installation process you can the run the following commands:
+If you install the bazzite base image you can use the following commands to rebase.
 
 ```bash
-rpm-ostree reset
+rpm-ostree reset # (Optional) Resets all layered packages
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/lcroberts/wmbazzite:latest
 systemctl reboot
 # After reboot rebase to signed image
