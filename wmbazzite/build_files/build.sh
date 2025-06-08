@@ -5,7 +5,7 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 export RELEASE
 
-. /tmp/scripts/wmbazzite-functions.sh
+. /ctx/functions.sh
 
 dnf5 copr enable -y lcroberts/WMBazzite
 
@@ -59,13 +59,6 @@ install-kmonad
 install-hyprland
 # install-cosmic
 
-# Developer Stuff
-# install-docker
-# install-vscode
-
 # Example for enabling a System Unit File
 systemctl enable podman.socket
 systemctl disable btrfs-dedup@var-home.timer
-
-update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/kitty 50
-update-alternatives --set x-terminal-emulator /usr/bin/kitty
