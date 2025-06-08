@@ -93,9 +93,9 @@ jobs:
 
       # Build image using Buildah action
       - name: Build Image
-        working-directory: ./wmbazzite
         id: build_image
         uses: redhat-actions/buildah-build@v2
+        working-directory: ./wmbazzite
         with:
           containerfiles: |
             ./Containerfile
