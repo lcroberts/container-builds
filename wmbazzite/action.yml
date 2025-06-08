@@ -15,15 +15,15 @@ outputs:
 runs:
   using: "composite"
   steps:
-    id: build_image
-    uses: redhat-actions/buildah-build@v2
-    with:
-      containerfiles: |
-        ./Containerfile
-      # Postfix image name with -custom to make it a little more descriptive
-      # Syntax: https://docs.github.com/en/actions/learn-github-actions/expressions#format
-      image: ${{ inputs.image-name }}
-      tags: |
-        ${{ inputs.alias-tags }}
-      labels: ${{ inputs.labels }}
-      oci: false
+    - id: build_image
+      uses: redhat-actions/buildah-build@v2
+      with:
+        containerfiles: |
+          ./Containerfile
+        # Postfix image name with -custom to make it a little more descriptive
+        # Syntax: https://docs.github.com/en/actions/learn-github-actions/expressions#format
+        image: ${{ inputs.image-name }}
+        tags: |
+          ${{ inputs.alias-tags }}
+        labels: ${{ inputs.labels }}
+        oci: false
