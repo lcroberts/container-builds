@@ -24,6 +24,9 @@ jobs:
   build_push:
     name: Build and push image
     runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: ./wmbazzite
 
     permissions:
       contents: read
@@ -96,7 +99,6 @@ jobs:
         id: build_image
         uses: redhat-actions/buildah-build@v2
         with:
-          working-directory: ./wmbazzite
           containerfiles: |
             ./Containerfile
           # Postfix image name with -custom to make it a little more descriptive
