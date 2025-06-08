@@ -105,8 +105,9 @@ jobs:
       #       ${{ steps.generate-tags.outputs.alias_tags }}
       #     labels: ${{ steps.meta.outputs.labels }}
       #     oci: false
-      - uses: ./wmbazzite
-        name: build_image
+      - name: Build Image
+        id: build_image
+        uses: ./wmbazzite
         with:
           image-name: ${{ env.MY_IMAGE_NAME }}
           alias-tags: ${{ steps.generate-tags.outputs.alias_tags }}

@@ -16,6 +16,7 @@ runs:
   using: "composite"
   steps:
     - id: copy_files
+      shell: bash
       run: |
         pwd
         cp -r * ..
@@ -24,8 +25,6 @@ runs:
       with:
         containerfiles: |
           ./Containerfile
-        # Postfix image name with -custom to make it a little more descriptive
-        # Syntax: https://docs.github.com/en/actions/learn-github-actions/expressions#format
         image: ${{ inputs.image-name }}
         tags: |
           ${{ inputs.alias-tags }}
