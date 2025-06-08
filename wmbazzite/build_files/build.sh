@@ -5,6 +5,10 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 export RELEASE
 
+# Fix the os-release so that isos can be built
+# https://github.com/ublue-os/image-template/issues/99
+sed -i /etc/os-release 's/ID=bazzite/ID=fedora/g'
+
 . /ctx/functions.sh
 
 dnf5 copr enable -y lcroberts/WMBazzite
