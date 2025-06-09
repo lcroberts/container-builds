@@ -10,12 +10,14 @@ install-hyprland() {
     dnf5 install -y \
         hyprland \
         hyprland-contrib \
+        hyprland-qtutils \
         hyprpicker \
         hyprlock \
         hypridle \
         hyprpaper \
         hyprpolkitagent \
         hyprsunset \
+        hyprshot \
         rofi-wayland \
         waybar \
         SwayNotificationCenter \
