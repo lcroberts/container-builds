@@ -39,11 +39,9 @@ dnf5 install -y \
     piper
 
 # CLI Stuff
-# TODO: Remove fish
 dnf5 install -y \
     zsh-autosuggestions \
     zsh-syntax-highlighting \
-    fish \
     starship \
     direnv \
     eza \
