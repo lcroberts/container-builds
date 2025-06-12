@@ -11,7 +11,7 @@ dnf5 install -y \
     diffutils \
     dnf-plugins-core \
     findutils \
-    fish \
+    zsh \
     glibc-all-langpacks \
     glibc-locale-source \
     gnupg2 \
