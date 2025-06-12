@@ -3,8 +3,7 @@
 dnf -y upgrade
 
 # Install packages required by Distrobox, this speeds up the first-run time
-dnf install -y \
-    dnf5 \
+dnf5 install -y \
     bash-completion \
     bc \
     bzip2 \
@@ -65,22 +64,22 @@ wget https://github.com/1player/host-spawn/releases/download/$(cat /tmp/distrobo
 chmod +x /usr/bin/host-spawn
 rm -drf /tmp/distrobox
 
-dnf install -y 'dnf-command(copr)'
-dnf copr enable -y kylegospo/distrobox-utils
-dnf copr enable -y lcroberts/WMBazzite
-dnf install -y xdg-utils-distrobox
+dnf5 install -y 'dnf-command(copr)'
+dnf5 copr enable -y kylegospo/distrobox-utils
+dnf5 copr enable -y lcroberts/WMBazzite
+dnf5 install -y xdg-utils-distrobox
 
 # RPM fusion
-dnf install -y \
+dnf5 install -y \
     https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
     https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf install -y \
+dnf5 install -y \
     intel-media-driver \
     nvidia-vaapi-driver
-dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld
-dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+dnf5 swap -y mesa-va-drivers mesa-va-drivers-freeworld
+dnf5 swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 
-dnf install -y \
+dnf5 install -y \
     @development-tools \
     @development-libs \
     gcc-g++ \
@@ -98,7 +97,9 @@ dnf install -y \
     yq \
     direnv \
     lldb \
-    just
+    just \
+    zsh-autosuggestions \
+    zsh-syntax-highlighting
 
 # Sets up host-exec for various applications
 mkdir -p /usr/local/bin/
@@ -112,4 +113,4 @@ ln_host_exec code
 ln_host_exec rpm-ostree
 ln_host_exec tailscale
 
-dnf clean all
+dnf5 clean all
