@@ -9,6 +9,7 @@ install-hyprland() {
     dnf5 copr enable -y solopasha/hyprland
     dnf5 install -y \
         hyprland \
+        xdg-desktop-portal-hyprland \
         hyprland-contrib \
         hyprland-qtutils \
         hyprpicker \
