@@ -26,7 +26,6 @@ dnf5 install -y \
     qt5ct \
     zathura \
     kitty \
-    ghostty \
     imv \
     mpv \
     mpv-mpris \
@@ -59,6 +58,7 @@ dnf5 install -y \
 # Misc Stuff
 install-fonts
 install-kmonad
+install-ghostty
 
 # Desktops
 install-hyprland
