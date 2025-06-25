@@ -5,8 +5,8 @@ install-cosmic() {
     dnf5 install -y cosmic-desktop
 }
 install-ghostty() {
-    dnf5 install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-    dnf5 install ghostty
+    dnf5 copr enable -y pgdev/ghostty
+    dnf5 install -y ghostty
 }
 
 install-hyprland() {
