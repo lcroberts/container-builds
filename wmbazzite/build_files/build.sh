@@ -10,8 +10,6 @@ export RELEASE
 sed -i 's/ID=bazzite/ID=fedora/g' /etc/os-release 
 
 # enable repos and update
-dnf5 config-manager setopt terra.enabled=1
-dnf5 upgrade -y
 
 . /ctx/functions.sh
 
@@ -30,7 +28,6 @@ dnf5 install -y \
     qt5ct \
     zathura \
     kitty \
-    ghostty \
     imv \
     mpv \
     mpv-mpris \
@@ -68,6 +65,10 @@ install-ghostty
 # Desktops
 install-hyprland
 # install-cosmic
+
+# Terra stuff
+dnf5 config-manager setopt terra.enabled=1
+dnf5 install -y ghostty
 
 # Example for enabling a System Unit File
 systemctl enable podman.socket
