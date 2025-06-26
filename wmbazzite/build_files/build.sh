@@ -11,6 +11,8 @@ sed -i 's/ID=bazzite/ID=fedora/g' /etc/os-release
 
 . /ctx/functions.sh
 
+dnf5 repo list --all
+
 dnf5 copr enable -y lcroberts/WMBazzite
 
 ### Install packages
