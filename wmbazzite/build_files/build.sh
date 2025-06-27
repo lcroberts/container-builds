@@ -26,7 +26,6 @@ dnf5 install -y \
     qt5ct \
     zathura \
     kitty \
-    ghostty \
     imv \
     mpv \
     mpv-mpris \
