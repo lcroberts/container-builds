@@ -41,6 +41,7 @@ dnf5 install -y \
 dnf5 install -y \
     zsh-autosuggestions \
     zsh-syntax-highlighting \
+    nodejs \
     starship \
     direnv \
     eza \
