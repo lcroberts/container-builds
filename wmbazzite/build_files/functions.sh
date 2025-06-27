@@ -4,10 +4,6 @@ install-cosmic() {
     dnf5 copr enable -y ryanabx/cosmic-epoch
     dnf5 install -y cosmic-desktop
 }
-install-ghostty() {
-    dnf5 copr enable -y pgdev/ghostty
-    dnf5 install -y ghostty
-}
 
 install-hyprland() {
     dnf5 copr enable -y solopasha/hyprland

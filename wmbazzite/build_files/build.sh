@@ -9,10 +9,6 @@ export RELEASE
 # https://github.com/ublue-os/image-template/issues/99
 sed -i 's/ID=bazzite/ID=fedora/g' /etc/os-release 
 
-# enable repos and update
-dnf5 config-manager setopt terra.enabled=1
-dnf5 upgrade -y
-
 . /ctx/functions.sh
 
 dnf5 copr enable -y lcroberts/WMBazzite
@@ -63,7 +59,6 @@ dnf5 install -y \
 # Misc Stuff
 install-fonts
 install-kmonad
-install-ghostty
 
 # Desktops
 install-hyprland
