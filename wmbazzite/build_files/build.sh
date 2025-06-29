@@ -39,8 +39,6 @@ dnf5 install -y \
 
 # CLI Stuff
 dnf5 install -y \
-    zsh-autosuggestions \
-    zsh-syntax-highlighting \
     nodejs \
     starship \
     direnv \
