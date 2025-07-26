@@ -70,3 +70,10 @@ install-fonts() {
     done
     rm -r /tmp/fonts
 }
+
+install-yazi() {
+    dnf5 install -y \
+        yazi \
+        poppler \
+        ImageMagick
+}
