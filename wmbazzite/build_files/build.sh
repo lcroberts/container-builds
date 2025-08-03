@@ -53,7 +53,8 @@ dnf5 install -y \
     iotop \
     tokei \
     tealdeer \
-    yq
+    yq \
+    lazygit
 
 # Misc Stuff
 install-fonts
