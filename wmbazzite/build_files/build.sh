@@ -19,7 +19,6 @@ dnf5 copr enable -y lcroberts/WMBazzite
 dnf5 install -y \
     onedrive \
     firewall-config \
-    virt-manager \
     gtk-murrine-engine \
     kvantum \
     kvantum-qt5 \
