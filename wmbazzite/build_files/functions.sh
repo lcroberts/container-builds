@@ -57,7 +57,6 @@ install-fonts() {
         liberation-fonts \
         adobe-source-han-sans-jp-fonts \
         adobe-source-han-serif-jp-fonts \
-        mozilla-fira-mono-fonts \
         powerline-fonts \
         jetbrains-mono-fonts-all \
         google-droid-sans-mono-fonts
