@@ -28,8 +28,7 @@ install-hyprland() {
         playerctl \
         kanshi \
         pavucontrol \
-        blueman \
-        flameshot
+        blueman
 }
 
 install-kmonad() {
