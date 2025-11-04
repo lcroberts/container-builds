@@ -7,7 +7,7 @@ install-cosmic() {
 
 install-hyprland() {
     dnf5 copr enable -y solopasha/hyprland
-    dnf5 install -y \
+    dnf5 install -y --skip-broken \
         hyprland \
         xdg-desktop-portal-hyprland \
         hyprland-contrib \
@@ -28,7 +28,8 @@ install-hyprland() {
         playerctl \
         kanshi \
         pavucontrol \
-        blueman
+        blueman \
+        flameshot
 }
 
 install-kmonad() {
