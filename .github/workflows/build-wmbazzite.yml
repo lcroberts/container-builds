@@ -33,7 +33,7 @@ jobs:
     steps:
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       # Uncomment if space issues become an issue
       - name: Maximize build space
