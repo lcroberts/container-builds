@@ -76,3 +76,8 @@ install-yazi() {
         poppler \
         ImageMagick
 }
+
+install-filen() {
+    curl -Lo /tmp/filen.rpm "https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm"
+    dnf5 install /tmp/filen.rpm
+}
