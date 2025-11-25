@@ -58,7 +58,6 @@ dnf5 install -y \
 install-fonts
 install-kmonad
 install-yazi
-install-filen
 
 # Desktops
 install-hyprland
