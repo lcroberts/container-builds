@@ -73,4 +73,4 @@ remove-vesktop-rpc-fix:
 	rm ~/.config/user-tmpfiles.d/discord-rpc.conf
 
 install-filen:
-	just _install_appimage_file "https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_arm64.AppImage"
+	just _install_appimage_file "https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.AppImage"
