@@ -67,3 +67,4 @@ cosign verify --key cosign.pub ghcr.io/lcroberts/wmbazzite
 #### Virtualization and Just
 
 The bazzite base image comes with a just for setting up virtualization. `ujust setup-virtualization` can be used to pull up a prompt to manage it. There are also many other just scripts provided that are worth looking through. They can be viewed by simply running `ujust` without any arguments
+
