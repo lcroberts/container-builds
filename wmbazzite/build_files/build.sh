@@ -13,6 +13,11 @@ sed -i 's/ID=bazzite/ID=fedora/g' /etc/os-release
 
 dnf5 copr enable -y lcroberts/WMBazzite
 
+uninstall-plasma
+
+install-cosmic
+systemctl enable cosmic-greeter
+
 ### Install packages
 
 # GUI/Input/Theming Stuff
@@ -35,6 +40,8 @@ dnf5 install -y \
     fcitx5-qt5 \
     fcitx5-mozc \
     piper
+
+dnf5 install -y https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm
 
 # CLI Stuff
 dnf5 install -y \
@@ -61,7 +68,6 @@ install-yazi
 
 # Desktops
 install-hyprland
-# install-cosmic
 
 # Example for enabling a System Unit File
 systemctl enable podman.socket
