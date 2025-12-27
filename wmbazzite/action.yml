@@ -21,12 +21,18 @@ runs:
       run: |
         cp -r wmbazzite/* ./
     - id: build_image
-      uses: redhat-actions/buildah-build@v2
-      with:
-        containerfiles: |
-          ./Containerfile
-        image: ${{ inputs.image-name }}
-        tags: |
-          ${{ inputs.alias-tags }}
-        labels: ${{ inputs.labels }}
-        oci: false
+      shell: bash
+      run: |
+        sudo buildah build \
+          --target ${{ env.CONTAINER_TARGET }} \
+          --build-arg IMAGE_NAME=${{ env.IMAGE_NAME }} \
+          --build-arg IMAGE_VENDOR=${{ github.repository_owner }} \
+          --build-arg BASE_IMAGE_NAME=Bazzite \
+          --build-arg BASE_IMAGE_FLAVOR=DX \
+          --build-arg FEDORA_MAJOR_VERSION=${{ env.FEDORA_VERSION }} \
+          --build-arg FEDORA_VERSION=${{ env.FEDORA_VERSION }} \
+          --build-arg IMAGE_BRANCH=${{ github.ref_name }} \
+          --build-arg SHA_HEAD_SHORT=${{ env.SHA_HEAD_SHORT }} \
+          --build-arg VERSION_TAG=${{ env.DEFAULT_TAG }} \
+          --build-arg VERSION_PRETTY="${{ env.DEFAULT_TAG }}" \
+          --tag ${{ env.IMAGE_NAME }} .
