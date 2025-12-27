@@ -109,7 +109,6 @@ jobs:
       - name: Build Image
         id: build_image
         uses: ./wmbazzite
-        privileged: true
         with:
           # Postfix image name with -custom to make it a little more descriptive
           # Syntax: https://docs.github.com/en/actions/learn-github-actions/expressions#format
@@ -120,6 +119,8 @@ jobs:
       - name: List stuff
         id: stuff
         run: |
+          podman save localhost/${{ env.IMAGE_NAME }}:${{ env.DEFAULT_TAG }} -o /tmp/image.tar
+          sudo podman load -i /tmp/image.tar
           sudo podman image list
 
       # Rechunk is a script that we use on Universal Blue to make sure there isnt a single huge layer when your image gets published.
@@ -131,7 +132,7 @@ jobs:
         uses: ublue-os/legacy-rechunk@a925083d9af7cb04b3e2a6e8c01bfa495f38b710 # v1.0.0
         with:
           rechunk: 'ghcr.io/ublue-os/legacy-rechunk:v1.0.0-x86_64'
-          ref: "containers-stroage:localhost/${{ env.IMAGE_NAME }}"
+          ref: "localhost/${{ env.IMAGE_NAME }}:${{ env.DEFAULT_TAG }}"
           prev-ref: "${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DEFAULT_TAG }}"
           skip_compression: true
           version: ${{ env.CENTOS_VERSION }}
