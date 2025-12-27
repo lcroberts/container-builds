@@ -24,7 +24,6 @@ runs:
       shell: bash
       run: |
         sudo buildah build \
-          --target ${{ env.CONTAINER_TARGET }} \
           --build-arg IMAGE_NAME=${{ env.IMAGE_NAME }} \
           --build-arg IMAGE_VENDOR=${{ github.repository_owner }} \
           --build-arg BASE_IMAGE_NAME=Bazzite \
