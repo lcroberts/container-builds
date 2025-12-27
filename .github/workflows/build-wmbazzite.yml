@@ -109,6 +109,7 @@ jobs:
       - name: Build Image
         id: build_image
         uses: ./wmbazzite
+        privileged: true
         with:
           # Postfix image name with -custom to make it a little more descriptive
           # Syntax: https://docs.github.com/en/actions/learn-github-actions/expressions#format
