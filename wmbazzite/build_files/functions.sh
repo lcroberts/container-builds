@@ -72,7 +72,20 @@ install-hyprland() {
     dnf5 copr enable -y solopasha/hyprland
     dnf5 copr enable -y avengemedia/dms
     dnf5 copr enable -y avengemedia/danklinux
+
+    # Dank Material Shell Stuff
     dnf5 install -y \
+        quickshell \
+        dms \
+        dgop \
+        cliphist \
+        dms-greeter \
+        danksearch \
+        ghostty \
+        matugen
+
+    # Hyprland stuff
+    dnf5 install -y --skip-broken \
         hyprland \
         xdg-desktop-portal-hyprland \
         hyprland-contrib \
@@ -94,17 +107,6 @@ install-hyprland() {
         kanshi \
         pavucontrol \
         blueman
-
-    # Dank Material Shell Stuff
-    dnf5 install -y \
-        quickshell \
-        dms \
-        dgop \
-        cliphist \
-        dms-greeter \
-        danksearch \
-        ghostty \
-        matugen
 
     dnf5 copr disable -y solopasha/hyprland
     dnf5 copr disable -y avengemedia/dms
