@@ -70,6 +70,8 @@ install-cosmic() {
 
 install-hyprland() {
     dnf5 copr enable -y solopasha/hyprland
+    dnf5 copr enable -y avengemedia/dms
+    dnf5 copr enable -y avengemedia/danklinux
     dnf5 install -y \
         hyprland \
         xdg-desktop-portal-hyprland \
@@ -92,11 +94,26 @@ install-hyprland() {
         kanshi \
         pavucontrol \
         blueman
+
+    # Dank Material Shell Stuff
+    dnf5 install -y \
+        quickshell \
+        dms \
+        dgop \
+        cliphist \
+        dms-greeter \
+        danksearch \
+        ghostty \
+        matugen
+
+    dnf5 copr disable -y solopasha/hyprland
+    dnf5 copr disable -y avengemedia/dms
+    dnf5 copr disable -y avengemedia/danklinux
 }
 
 install-kmonad() {
-    curl -Lo /usr/bin/kmonad https://github.com/kmonad/kmonad/releases/latest/download/kmonad
-    chmod +x /usr/bin/kmonad
+    curl -Lo /usr/local/bin/kmonad https://github.com/kmonad/kmonad/releases/latest/download/kmonad
+    chmod +x /usr/local/bin/kmonad
 }
 
 install-vscode() {
