@@ -112,8 +112,8 @@ install-hyprland() {
 }
 
 install-kmonad() {
-    curl -Lo /usr/local/bin/kmonad https://github.com/kmonad/kmonad/releases/latest/download/kmonad
-    chmod +x /usr/local/bin/kmonad
+    curl -Lo /usr/bin/kmonad https://github.com/kmonad/kmonad/releases/latest/download/kmonad
+    chmod +x /usr/bin/kmonad
 }
 
 install-vscode() {
