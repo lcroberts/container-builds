@@ -13,11 +13,6 @@ sed -i 's/ID=bazzite/ID=fedora/g' /etc/os-release
 
 dnf5 copr enable -y lcroberts/WMBazzite
 
-uninstall-plasma
-
-install-cosmic
-systemctl enable cosmic-greeter
-
 ### Install packages
 
 # GUI/Input/Theming Stuff
