@@ -82,7 +82,9 @@ install-hyprland() {
         dms-greeter \
         danksearch \
         ghostty \
-        matugen
+        matugen \
+        slurp \
+        grim
 
     # Hyprland stuff
     dnf5 install -y --skip-broken \
@@ -91,20 +93,11 @@ install-hyprland() {
         hyprland-contrib \
         hyprland-qtutils \
         hyprpicker \
-        hyprlock \
-        hypridle \
-        hyprpaper \
-        hyprpolkitagent \
-        hyprsunset \
-        hyprshot \
         rofi-wayland \
-        waybar \
-        SwayNotificationCenter \
         network-manager-applet \
         wl-clipboard \
         brightnessctl \
         playerctl \
-        kanshi \
         pavucontrol \
         blueman
 
