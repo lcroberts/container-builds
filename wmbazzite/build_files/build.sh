@@ -19,10 +19,9 @@ dnf5 copr enable -y lcroberts/WMBazzite
 dnf5 install -y \
     firewall-config \
     gtk-murrine-engine \
+    adw-gtk3-theme \
     kvantum \
-    kvantum-qt5 \
     qt6ct \
-    qt5ct \
     zathura \
     kitty \
     imv \
