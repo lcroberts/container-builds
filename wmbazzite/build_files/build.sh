@@ -61,7 +61,8 @@ install-kmonad
 install-yazi
 
 # Desktops
-install-hyprland
+# install-hyprland
+install-niri
 
 # Example for enabling a System Unit File
 systemctl enable podman.socket

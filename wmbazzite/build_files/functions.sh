@@ -68,6 +68,24 @@ install-cosmic() {
     dnf5 install -y cosmic-desktop
 }
 
+install-niri() {
+    dnf5 copr enable -y avengemedia/dms
+    dnf5 copr enable -y avengemedia/danklinux
+
+    dnf5 install -y \
+        niri \
+        dms \
+        dgop \
+        dms-greeter \
+        danksearch \
+        ghostty \
+        matugen
+
+
+    dnf5 copr disable -y avengemedia/dms
+    dnf5 copr disable -y avengemedia/danklinux
+}
+
 install-hyprland() {
     dnf5 copr enable -y solopasha/hyprland
     dnf5 copr enable -y avengemedia/dms
