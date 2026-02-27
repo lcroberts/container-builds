@@ -70,19 +70,6 @@ install-cosmic() {
 
 install-hyprland() {
     dnf5 copr enable -y lionheartp/Hyprland
-    dnf5 copr enable -y avengemedia/dms
-    dnf5 copr enable -y avengemedia/danklinux
-
-    # Dank Material Shell Stuff
-    dnf5 install -y \
-        quickshell \
-        dms \
-        dgop \
-        dms-greeter \
-        danksearch \
-        ghostty \
-        matugen
-
     # Hyprland stuff
     dnf5 install -y \
         hyprland \
@@ -94,8 +81,19 @@ install-hyprland() {
         playerctl \
         pavucontrol \
         blueman
-
     dnf5 copr disable -y lionheartp/Hyprland
+
+    dnf5 copr enable -y avengemedia/dms
+    dnf5 copr enable -y avengemedia/danklinux
+    # Dank Material Shell Stuff
+    dnf5 install -y \
+        quickshell \
+        dms \
+        dgop \
+        dms-greeter \
+        danksearch \
+        ghostty \
+        matugen
     dnf5 copr disable -y avengemedia/dms
     dnf5 copr disable -y avengemedia/danklinux
 }
