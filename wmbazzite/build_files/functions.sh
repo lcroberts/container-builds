@@ -79,6 +79,8 @@ install-niri() {
         dms-greeter \
         danksearch \
         ghostty \
+        network-manager-applet \
+        playerctl \
         matugen
 
 
