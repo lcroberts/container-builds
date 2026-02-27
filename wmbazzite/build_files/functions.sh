@@ -81,6 +81,9 @@ install-niri() {
         ghostty \
         network-manager-applet \
         playerctl \
+        xdg-desktop-portal-gtk \
+        xdg-desktop-portal-gnome \
+        gnome-keyring \
         matugen
 
 
