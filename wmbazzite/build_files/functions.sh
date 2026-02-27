@@ -68,31 +68,8 @@ install-cosmic() {
     dnf5 install -y cosmic-desktop
 }
 
-install-niri() {
-    dnf5 copr enable -y avengemedia/dms
-    dnf5 copr enable -y avengemedia/danklinux
-
-    dnf5 install -y \
-        niri \
-        dms \
-        dgop \
-        dms-greeter \
-        danksearch \
-        ghostty \
-        network-manager-applet \
-        playerctl \
-        xdg-desktop-portal-gtk \
-        xdg-desktop-portal-gnome \
-        gnome-keyring \
-        matugen
-
-
-    dnf5 copr disable -y avengemedia/dms
-    dnf5 copr disable -y avengemedia/danklinux
-}
-
 install-hyprland() {
-    dnf5 copr enable -y solopasha/hyprland
+    dnf5 copr enable -y lionheartp/Hyprland
     dnf5 copr enable -y avengemedia/dms
     dnf5 copr enable -y avengemedia/danklinux
 
@@ -101,22 +78,16 @@ install-hyprland() {
         quickshell \
         dms \
         dgop \
-        cliphist \
         dms-greeter \
         danksearch \
         ghostty \
-        matugen \
-        slurp \
-        grim
+        matugen
 
     # Hyprland stuff
-    dnf5 install -y --skip-broken \
+    dnf5 install -y \
         hyprland \
         xdg-desktop-portal-hyprland \
         hyprland-contrib \
-        hyprland-qtutils \
-        hyprpicker \
-        rofi-wayland \
         network-manager-applet \
         wl-clipboard \
         brightnessctl \
@@ -124,7 +95,7 @@ install-hyprland() {
         pavucontrol \
         blueman
 
-    dnf5 copr disable -y solopasha/hyprland
+    dnf5 copr disable -y lionheartp/Hyprland
     dnf5 copr disable -y avengemedia/dms
     dnf5 copr disable -y avengemedia/danklinux
 }
