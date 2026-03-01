@@ -69,12 +69,13 @@ install-cosmic() {
 }
 
 install-hyprland() {
-    dnf5 copr enable -y lionheartp/Hyprland
     # Hyprland stuff
+    dnf5 copr enable -y lionheartp/Hyprland
     dnf5 install -y \
         hyprland \
         xdg-desktop-portal-hyprland \
         hyprland-contrib \
+        hyprland-guiutils \
         network-manager-applet \
         wl-clipboard \
         brightnessctl \
@@ -83,9 +84,9 @@ install-hyprland() {
         blueman
     dnf5 copr disable -y lionheartp/Hyprland
 
+    # Dank Material Shell Stuff
     dnf5 copr enable -y avengemedia/dms
     dnf5 copr enable -y avengemedia/danklinux
-    # Dank Material Shell Stuff
     dnf5 install -y \
         quickshell \
         dms \
