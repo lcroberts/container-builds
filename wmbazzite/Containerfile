@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/ublue-os/bazzite-dx:stable
+FROM ghcr.io/ublue-os/bazzite:stable
 COPY custom.just /usr/share/ublue-os/just/60-custom.just
 
 ## Other possible base images include:

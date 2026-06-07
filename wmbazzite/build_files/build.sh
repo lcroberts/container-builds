@@ -59,10 +59,10 @@ dnf5 install -y \
 install-fonts
 install-kmonad
 install-yazi
+install-docker
 
 # Desktops
 install-hyprland
 
 # Example for enabling a System Unit File
 systemctl enable podman.socket
-systemctl disable btrfs-dedup@var-home.timer
