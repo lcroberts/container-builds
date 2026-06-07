@@ -39,6 +39,7 @@ dnf5 install -y https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x
 
 # CLI Stuff
 dnf5 install -y \
+    zsh \
     nodejs \
     starship \
     direnv \
