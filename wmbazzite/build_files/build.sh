@@ -18,6 +18,7 @@ dnf5 copr enable -y lcroberts/WMBazzite
 # GUI/Input/Theming Stuff
 dnf5 install -y \
     tuned-ppd \
+    cups-pk-helper \
     firewall-config \
     gtk-murrine-engine \
     adw-gtk3-theme \
