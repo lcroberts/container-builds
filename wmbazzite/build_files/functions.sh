@@ -127,7 +127,9 @@ install-fonts() {
         adobe-source-han-serif-jp-fonts \
         powerline-fonts \
         jetbrains-mono-fonts-all \
-        google-droid-sans-mono-fonts
+        google-droid-sans-mono-fonts \
+        rsms-inter-fonts \
+        rsms-inter-vf-fonts
 
     for font in "Ubuntu" "JetBrainsMono" "FiraCode" "Iosevka" "NerdFontsSymbolsOnly"; do
         mkdir -p /tmp/fonts/
