@@ -29,7 +29,7 @@ jobs:
     steps: 
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
         
       # Build metadata
       - name: Image Metadata
