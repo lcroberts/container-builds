@@ -148,7 +148,7 @@ install-yazi() {
 }
 
 install-netbird() {
-    sudo tee /etc/yum.repos.d/netbird.repo <<EOF
+    tee /etc/yum.repos.d/netbird.repo <<EOF
 [netbird]
 name=netbird
 baseurl=https://pkgs.netbird.io/yum/
@@ -158,5 +158,10 @@ gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
 repo_gpgcheck=1
 EOF
 
-    sudo dnf install netbird netbird-ui gtk4 webkitgtk6.0 xdg-utils
+    dnf5 install -y \
+        netbird \
+        netbird-ui \
+        gtk4 \
+        webkitgtk6.0 \
+        xdg-utils
 }
