@@ -69,6 +69,35 @@ install-cosmic() {
 }
 
 install-hyprland() {
+    # Provide missing xorg-x11-server-Xwayland(x86-64) capability for terra-xorg-x11-server-Xwayland
+    if rpm -q terra-xorg-x11-server-Xwayland >/dev/null 2>&1; then
+        XWAYLAND_VER=$(rpm -q --queryformat '%{VERSION}-%{RELEASE}' terra-xorg-x11-server-Xwayland)
+        dnf5 install -y rpm-build
+        mkdir -p /tmp/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+        cat <<EOF > /tmp/rpmbuild/SPECS/xwayland-compat.spec
+Name: xwayland-compat
+Version: 1.0
+Release: 1
+Summary: Compatibility provide for xorg-x11-server-Xwayland(x86-64)
+License: MIT
+BuildArch: x86_64
+Provides: xorg-x11-server-Xwayland(x86-64) = ${XWAYLAND_VER}
+Provides: xorg-x11-server-Xwayland(x86-64)
+
+%description
+Virtual compatibility package satisfying xorg-x11-server-Xwayland(x86-64) using installed terra-xorg-x11-server-Xwayland.
+
+%prep
+%build
+%install
+%files
+EOF
+        rpmbuild --define "_topdir /tmp/rpmbuild" -bb /tmp/rpmbuild/SPECS/xwayland-compat.spec
+        dnf5 install -y /tmp/rpmbuild/RPMS/x86_64/xwayland-compat-1.0-1.x86_64.rpm
+        dnf5 remove -y rpm-build
+        rm -rf /tmp/rpmbuild
+    fi
+
     # Hyprland stuff
     dnf5 copr enable -y lionheartp/Hyprland
     dnf5 install -y \
@@ -165,5 +194,21 @@ EOF
         webkitgtk6.0 \
         xdg-utils
 
+    # Fetch upstream unit file template and adapt for Fedora / single-instance
+    curl -sSfL -o /usr/lib/systemd/system/netbird@.service \
+        https://raw.githubusercontent.com/netbirdio/netbird/main/release_files/systemd/netbird%40.service
+    sed -i 's|/etc/default/netbird|/etc/sysconfig/netbird|' \
+        /usr/lib/systemd/system/netbird@.service
+
+    cp /usr/lib/systemd/system/netbird@.service /usr/lib/systemd/system/netbird.service
+    sed -i \
+        -e 's/ (%i)//' \
+        -e 's/client-%i.log/client.log/' \
+        -e 's|/var/run/netbird/%i.sock|/var/run/netbird.sock|' \
+        /usr/lib/systemd/system/netbird.service
+
+    if [ -f /etc/sysconfig/netbird ]; then
+        chmod 0600 /etc/sysconfig/netbird
+    fi
     systemctl enable netbird.service
 }
