@@ -158,10 +158,12 @@ gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
 repo_gpgcheck=1
 EOF
 
-    dnf5 install -y \
+    dnf5 --setopt=tsflags=noscripts install -y \
         netbird \
         netbird-ui \
         gtk4 \
         webkitgtk6.0 \
         xdg-utils
+
+    systemctl enable netbird.service
 }
