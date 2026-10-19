@@ -63,7 +63,6 @@ install-fonts
 install-kmonad
 install-yazi
 install-docker
-install-netbird
 
 # Desktops
 install-hyprland
