@@ -86,7 +86,7 @@ dnf5 install -y \
     tmux \
     vim \
     neovim \
-    tealdeer \
+    tldr \
     eza \
     fd-find \
     ripgrep \

@@ -54,7 +54,7 @@ dnf5 install -y \
     tmux \
     iotop \
     tokei \
-    tealdeer \
+    tldr \
     yq \
     lazygit
 
